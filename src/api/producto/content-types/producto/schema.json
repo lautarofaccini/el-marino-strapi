@@ -17,7 +17,8 @@
     },
     "slug": {
       "type": "uid",
-      "required": true
+      "required": true,
+      "targetField": "nombre"
     },
     "isActive": {
       "type": "boolean",
@@ -28,10 +29,10 @@
       "type": "decimal",
       "required": true
     },
-    "categoria": {
+    "categorias": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::product-category.product-category",
+      "relation": "manyToMany",
+      "target": "api::categoria.categoria",
       "inversedBy": "productos"
     },
     "descripcion": {
@@ -40,7 +41,7 @@
     "imagenes": {
       "type": "media",
       "multiple": true,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
