@@ -2,11 +2,12 @@
   "collectionName": "components_caracteristicas_especitificaciones",
   "info": {
     "displayName": "especitificaciones",
-    "icon": "code"
+    "icon": "code",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Caracteristica": {
+    "caracteristica": {
       "type": "enumeration",
       "enum": [
         "Modelo",
@@ -16,7 +17,7 @@
       ],
       "required": true
     },
-    "Detalle": {
+    "detalle": {
       "type": "string",
       "required": true
     }

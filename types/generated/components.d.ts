@@ -4,15 +4,16 @@ export interface CaracteristicasEspecitificaciones
   extends Struct.ComponentSchema {
   collectionName: 'components_caracteristicas_especitificaciones';
   info: {
+    description: '';
     displayName: 'especitificaciones';
     icon: 'code';
   };
   attributes: {
-    Caracteristica: Schema.Attribute.Enumeration<
+    caracteristica: Schema.Attribute.Enumeration<
       ['Modelo', 'Marca', 'Resistencia', 'Acci\u00F3n']
     > &
       Schema.Attribute.Required;
-    Detalle: Schema.Attribute.String & Schema.Attribute.Required;
+    detalle: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
