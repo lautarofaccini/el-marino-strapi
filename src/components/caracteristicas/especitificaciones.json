@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_caracteristicas_especitificaciones",
+  "info": {
+    "displayName": "especitificaciones",
+    "icon": "code",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "caracteristica": {
+      "type": "enumeration",
+      "enum": [
+        "Modelo",
+        "Marca",
+        "Resistencia",
+        "Acción"
+      ],
+      "required": true
+    },
+    "detalle": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
