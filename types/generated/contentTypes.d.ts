@@ -536,7 +536,21 @@ export interface ApiProductoProducto extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    descripcion: Schema.Attribute.Blocks;
+    descuento: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 100;
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
+    especificaciones: Schema.Attribute.Component<
+      'caracteristicas.especitificaciones',
+      true
+    > &
+      Schema.Attribute.Required;
     imagenes: Schema.Attribute.Media<'images', true> &
       Schema.Attribute.Required;
     isActive: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;

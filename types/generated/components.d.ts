@@ -1,5 +1,37 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface CaracteristicasEspecitificaciones
+  extends Struct.ComponentSchema {
+  collectionName: 'components_caracteristicas_especitificaciones';
+  info: {
+    displayName: 'especitificaciones';
+    icon: 'code';
+  };
+  attributes: {
+    Caracteristica: Schema.Attribute.Enumeration<
+      ['Modelo', 'Marca', 'Resistencia', 'Acci\u00F3n']
+    > &
+      Schema.Attribute.Required;
+    Detalle: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface CaracteristicasNombrecomponente
+  extends Struct.ComponentSchema {
+  collectionName: 'components_caracteristicas_nombrecomponentes';
+  info: {
+    description: '';
+    displayName: 'nombrecomponente';
+    icon: 'database';
+  };
+  attributes: {
+    Caracteristica: Schema.Attribute.Enumeration<
+      ['Modelo', 'Marca', 'Resistencia', 'Acci\u00F3n']
+    >;
+    Detalles: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -65,6 +97,8 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'caracteristicas.especitificaciones': CaracteristicasEspecitificaciones;
+      'caracteristicas.nombrecomponente': CaracteristicasNombrecomponente;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

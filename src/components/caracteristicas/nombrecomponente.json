@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_caracteristicas_nombrecomponentes",
+  "info": {
+    "displayName": "nombrecomponente",
+    "icon": "database",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Caracteristica": {
+      "type": "enumeration",
+      "enum": [
+        "Modelo",
+        "Marca",
+        "Resistencia",
+        "Acción"
+      ]
+    },
+    "Detalles": {
+      "type": "string"
+    }
+  }
+}

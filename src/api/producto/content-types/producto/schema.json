@@ -35,9 +35,6 @@
       "target": "api::categoria.categoria",
       "inversedBy": "productos"
     },
-    "descripcion": {
-      "type": "blocks"
-    },
     "imagenes": {
       "type": "media",
       "multiple": true,
@@ -49,6 +46,20 @@
     "stock": {
       "type": "integer",
       "required": true,
+      "min": 0
+    },
+    "especificaciones": {
+      "displayName": "especitificaciones",
+      "type": "component",
+      "repeatable": true,
+      "component": "caracteristicas.especitificaciones",
+      "required": true
+    },
+    "descuento": {
+      "type": "integer",
+      "default": 0,
+      "required": true,
+      "max": 100,
       "min": 0
     }
   }
