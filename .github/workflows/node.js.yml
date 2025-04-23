@@ -20,6 +20,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - name: Crear .env
+        run: |
+          cat <<EOF > .env
+          HOST=0.0.0.0
+          PORT=1337
+          APP_KEYS=${{ secrets.APP_KEYS }}
+          API_TOKEN_SALT=${{ secrets.API_TOKEN_SALT }}
+          ADMIN_JWT_SECRET=${{ secrets.ADMIN_JWT_SECRET }}
+          TRANSFER_TOKEN_SALT=${{ secrets.TRANSFER_TOKEN_SALT }}
+          JWT_SECRET=${{ secrets.JWT_SECRET }}
+          NODE_ENV=production
+          EOF
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
